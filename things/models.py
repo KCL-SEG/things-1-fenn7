@@ -1,3 +1,4 @@
+import django
 from enum import unique
 from wsgiref.validate import validator
 from django.core.validators import RegexValidator
