@@ -1,5 +1,4 @@
 from enum import unique
-import imp
 from wsgiref.validate import validator
 from django.core.validators import RegexValidator
 from django.core.validators import MinLengthValidator
