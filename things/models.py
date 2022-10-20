@@ -9,7 +9,7 @@ from django.contrib.auth.models import AbstractUser
 
 # Create your models here.
 class Thing(models.Model):
-    username=models.CharField(
+    name=models.CharField(
         max_length=30,
         unique=True,
         blank=False,
