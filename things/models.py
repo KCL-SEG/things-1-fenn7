@@ -2,8 +2,8 @@ import django
 from enum import unique
 from wsgiref.validate import validator
 from django.core.validators import RegexValidator
-from django.core.validators import MinLengthValidator
-from django.core.validators import MaxLengthValidator
+from django.core.validators import MinValueValidator
+from django.core.validators import MaxValueValidator
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 
@@ -21,13 +21,13 @@ class Thing(models.Model):
     description = models.TextField(
         max_length=120,
         unique=False,
-        blank=False,
+        blank=True,
     )
     
     quantity = models.IntegerField(
-        blank=False,
+        unique=False,
         validators=[
-            MinLengthValidator(0, message = "Value must be bigger than 0!"),
-            MaxLengthValidator(100, message = "Value must be less than 100!")
+            MinValueValidator(0, message = "Value must be bigger than 0!"),
+            MaxValueValidator(100, message = "Value must be less than 100!")
                     ]
     )
