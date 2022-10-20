@@ -25,7 +25,6 @@ class Thing(models.Model):
     )
     
     quantity = models.IntegerField(
-        max_length=100,
         blank=False,
         validators=[
             MinLengthValidator(0, message = "Value must be bigger than 0!"),
